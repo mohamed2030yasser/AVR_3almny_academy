@@ -1,0 +1,287 @@
+
+XC8Application1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000fc  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001de  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  000001de  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000078  00000000  00000000  0000020d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000cd4  00000000  00000000  00000285  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000006be  00000000  00000000  00000f59  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000004b3  00000000  00000000  00001617  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000c4  00000000  00000000  00001acc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000001cd  00000000  00000000  00001b90  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    0000033b  00000000  00000000  00001d5d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000058  00000000  00000000  00002098  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .text         00000004  00000186  00000186  000001da  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000020f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .text.DIO_set_dir 00000026  00000132  00000132  00000186  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .text.DIO_tog_port 00000036  000000fc  000000fc  00000150  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.main    00000022  00000158  00000158  000001ac  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.libgcc  0000000c  0000017a  0000017a  000001ce  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+   4:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+   8:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+   c:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  10:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  14:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  18:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  1c:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  20:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  24:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  28:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  2c:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  30:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  34:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  38:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  3c:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  40:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  44:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  48:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  4c:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  50:	0c 94 c3 00 	jmp	0x186	; 0x186 <__bad_interrupt>
+  54:	a4 00       	.word	0x00a4	; ????
+  56:	a6 00       	.word	0x00a6	; ????
+  58:	a8 00       	.word	0x00a8	; ????
+  5a:	aa 00       	.word	0x00aa	; ????
+  5c:	ab 00       	.word	0x00ab	; ????
+  5e:	ab 00       	.word	0x00ab	; ????
+  60:	ab 00       	.word	0x00ab	; ????
+  62:	ab 00       	.word	0x00ab	; ????
+  64:	ab 00       	.word	0x00ab	; ????
+  66:	ab 00       	.word	0x00ab	; ????
+  68:	ab 00       	.word	0x00ab	; ????
+  6a:	ab 00       	.word	0x00ab	; ????
+  6c:	ab 00       	.word	0x00ab	; ????
+  6e:	ab 00       	.word	0x00ab	; ????
+  70:	ab 00       	.word	0x00ab	; ????
+  72:	ab 00       	.word	0x00ab	; ????
+  74:	ab 00       	.word	0x00ab	; ????
+  76:	ab 00       	.word	0x00ab	; ????
+  78:	ab 00       	.word	0x00ab	; ????
+  7a:	ab 00       	.word	0x00ab	; ????
+  7c:	ab 00       	.word	0x00ab	; ????
+  7e:	ab 00       	.word	0x00ab	; ????
+  80:	ab 00       	.word	0x00ab	; ????
+  82:	ab 00       	.word	0x00ab	; ????
+  84:	ab 00       	.word	0x00ab	; ????
+  86:	ab 00       	.word	0x00ab	; ????
+  88:	ab 00       	.word	0x00ab	; ????
+  8a:	ab 00       	.word	0x00ab	; ????
+  8c:	ab 00       	.word	0x00ab	; ????
+  8e:	ab 00       	.word	0x00ab	; ????
+  90:	ab 00       	.word	0x00ab	; ????
+  92:	ab 00       	.word	0x00ab	; ????
+  94:	a4 00       	.word	0x00a4	; ????
+  96:	a6 00       	.word	0x00a6	; ????
+  98:	a8 00       	.word	0x00a8	; ????
+  9a:	aa 00       	.word	0x00aa	; ????
+  9c:	89 00       	.word	0x0089	; ????
+  9e:	8d 00       	.word	0x008d	; ????
+  a0:	91 00       	.word	0x0091	; ????
+  a2:	95 00       	.word	0x0095	; ????
+  a4:	98 00       	.word	0x0098	; ????
+  a6:	98 00       	.word	0x0098	; ????
+  a8:	98 00       	.word	0x0098	; ????
+  aa:	98 00       	.word	0x0098	; ????
+  ac:	98 00       	.word	0x0098	; ????
+  ae:	98 00       	.word	0x0098	; ????
+  b0:	98 00       	.word	0x0098	; ????
+  b2:	98 00       	.word	0x0098	; ????
+  b4:	98 00       	.word	0x0098	; ????
+  b6:	98 00       	.word	0x0098	; ????
+  b8:	98 00       	.word	0x0098	; ????
+  ba:	98 00       	.word	0x0098	; ????
+  bc:	98 00       	.word	0x0098	; ????
+  be:	98 00       	.word	0x0098	; ????
+  c0:	98 00       	.word	0x0098	; ????
+  c2:	98 00       	.word	0x0098	; ????
+  c4:	98 00       	.word	0x0098	; ????
+  c6:	98 00       	.word	0x0098	; ????
+  c8:	98 00       	.word	0x0098	; ????
+  ca:	98 00       	.word	0x0098	; ????
+  cc:	98 00       	.word	0x0098	; ????
+  ce:	98 00       	.word	0x0098	; ????
+  d0:	98 00       	.word	0x0098	; ????
+  d2:	98 00       	.word	0x0098	; ????
+  d4:	98 00       	.word	0x0098	; ????
+  d6:	98 00       	.word	0x0098	; ????
+  d8:	98 00       	.word	0x0098	; ????
+  da:	98 00       	.word	0x0098	; ????
+  dc:	89 00       	.word	0x0089	; ????
+  de:	8d 00       	.word	0x008d	; ????
+  e0:	91 00       	.word	0x0091	; ????
+  e2:	95 00       	.word	0x0095	; ????
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf e5       	ldi	r28, 0x5F	; 95
+  ea:	d4 e0       	ldi	r29, 0x04	; 4
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	0e 94 ac 00 	call	0x158	; 0x158 <main>
+  f4:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <_exit>
+
+000000f8 <_exit>:
+  f8:	f8 94       	cli
+
+000000fa <__stop_program>:
+  fa:	ff cf       	rjmp	.-2      	; 0xfa <__stop_program>
+
+Disassembly of section .text:
+
+00000186 <__bad_interrupt>:
+ 186:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.DIO_set_dir:
+
+00000132 <DIO_set_dir>:
+}
+
+
+
+void DIO_set_dir(unsigned char port,char dir){
+    switch(port){
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	fc 01       	movw	r30, r24
+ 136:	e1 54       	subi	r30, 0x41	; 65
+ 138:	f1 09       	sbc	r31, r1
+ 13a:	e4 32       	cpi	r30, 0x24	; 36
+ 13c:	f1 05       	cpc	r31, r1
+ 13e:	58 f4       	brcc	.+22     	; 0x156 <DIO_set_dir+0x24>
+ 140:	e6 5d       	subi	r30, 0xD6	; 214
+ 142:	ff 4f       	sbci	r31, 0xFF	; 255
+ 144:	0c 94 bd 00 	jmp	0x17a	; 0x17a <__tablejump2__>
+    case 'A':
+    case 'a':
+        {
+            DDRA=dir;
+ 148:	6a bb       	out	0x1a, r22	; 26
+            break;
+ 14a:	08 95       	ret
+        }
+    case 'B':
+    case 'b':
+        {
+            DDRB=dir;
+ 14c:	67 bb       	out	0x17, r22	; 23
+            break;
+ 14e:	08 95       	ret
+        }
+    case 'C':
+    case 'c':
+        {
+            DDRC=dir;
+ 150:	64 bb       	out	0x14, r22	; 20
+            break;
+ 152:	08 95       	ret
+        }
+    case 'D':
+    case 'd':
+        {
+            DDRD=dir;
+ 154:	61 bb       	out	0x11, r22	; 17
+ 156:	08 95       	ret
+
+Disassembly of section .text.DIO_tog_port:
+
+000000fc <DIO_tog_port>:
+
+    }
+
+    return x;
+
+}
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+  fe:	fc 01       	movw	r30, r24
+ 100:	e1 54       	subi	r30, 0x41	; 65
+ 102:	f1 09       	sbc	r31, r1
+ 104:	e4 32       	cpi	r30, 0x24	; 36
+ 106:	f1 05       	cpc	r31, r1
+ 108:	98 f4       	brcc	.+38     	; 0x130 <DIO_tog_port+0x34>
+ 10a:	e2 5b       	subi	r30, 0xB2	; 178
+ 10c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 10e:	0c 94 bd 00 	jmp	0x17a	; 0x17a <__tablejump2__>
+ 112:	8b b3       	in	r24, 0x1b	; 27
+ 114:	80 95       	com	r24
+ 116:	8b bb       	out	0x1b, r24	; 27
+ 118:	08 95       	ret
+ 11a:	88 b3       	in	r24, 0x18	; 24
+ 11c:	80 95       	com	r24
+ 11e:	88 bb       	out	0x18, r24	; 24
+ 120:	08 95       	ret
+ 122:	85 b3       	in	r24, 0x15	; 21
+ 124:	80 95       	com	r24
+ 126:	85 bb       	out	0x15, r24	; 21
+ 128:	08 95       	ret
+ 12a:	82 b3       	in	r24, 0x12	; 18
+ 12c:	80 95       	com	r24
+ 12e:	82 bb       	out	0x12, r24	; 18
+ 130:	08 95       	ret
+
+Disassembly of section .text.main:
+
+00000158 <main>:
+#define F_CPU 8000000UL
+#include "DIO.h"
+
+int main(void)
+{
+	DIO_set_dir('A',0xf1);
+ 158:	61 ef       	ldi	r22, 0xF1	; 241
+ 15a:	81 e4       	ldi	r24, 0x41	; 65
+ 15c:	0e 94 99 00 	call	0x132	; 0x132 <DIO_set_dir>
+    while(1)
+    {
+		DIO_tog_port('A');
+ 160:	81 e4       	ldi	r24, 0x41	; 65
+ 162:	0e 94 7e 00 	call	0xfc	; 0xfc <__data_load_end>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 166:	2f e3       	ldi	r18, 0x3F	; 63
+ 168:	8d e0       	ldi	r24, 0x0D	; 13
+ 16a:	93 e0       	ldi	r25, 0x03	; 3
+ 16c:	21 50       	subi	r18, 0x01	; 1
+ 16e:	80 40       	sbci	r24, 0x00	; 0
+ 170:	90 40       	sbci	r25, 0x00	; 0
+ 172:	e1 f7       	brne	.-8      	; 0x16c <main+0x14>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <main+0x1e>
+ 176:	00 00       	nop
+ 178:	f3 cf       	rjmp	.-26     	; 0x160 <main+0x8>
+
+Disassembly of section .text.libgcc:
+
+0000017a <__tablejump2__>:
+ 17a:	ee 0f       	add	r30, r30
+ 17c:	ff 1f       	adc	r31, r31
+ 17e:	05 90       	lpm	r0, Z+
+ 180:	f4 91       	lpm	r31, Z
+ 182:	e0 2d       	mov	r30, r0
+ 184:	09 94       	ijmp

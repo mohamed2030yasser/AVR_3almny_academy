@@ -1,0 +1,1 @@
+INT/INT.d INT/INT.o: ../INT/INT.c
