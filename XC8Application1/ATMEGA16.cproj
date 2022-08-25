@@ -194,6 +194,12 @@
     <Compile Include="Ultra_Sonic\Ultra_Sonic.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="USART\USART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="USART\USART.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DIO" />
@@ -206,6 +212,7 @@
     <Folder Include="KeyPad" />
     <Folder Include="ADC" />
     <Folder Include="Motors" />
+    <Folder Include="USART" />
     <Folder Include="Ultra_Sonic" />
     <Folder Include="TIMERS" />
   </ItemGroup>
