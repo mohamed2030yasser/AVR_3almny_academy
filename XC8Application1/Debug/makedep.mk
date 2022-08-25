@@ -28,3 +28,5 @@ TIMERS\TIMERS.c
 
 Ultra_Sonic\Ultra_Sonic.c
 
+USART\USART.c
+

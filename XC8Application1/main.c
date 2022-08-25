@@ -23,6 +23,7 @@
 #include "TIMERS/TIMERS.h"
 #include "Ultra_Sonic/Ultra_Sonic.h"
 #include "Motors/Motors.h"
+#include "USART/USART.h"
 
 
 
@@ -30,30 +31,23 @@
 
 int main(void)
 {
+	//------------TX-----------
+	
+	USART_intialize(9600);
+	_delay_ms(300);
+	USART_send_string("mohamed yasser");
+	
+	/* //---------------RX--------
+	unsigned char x;
 	LCD_inatialize('a','b',0,'b',1);
-	LCD_send_string("angle : ",'a','b',0,'b',1);
+	USART_intialize(9600);
 	while(1)
 	{
-		
-		Servo_motor_angle(30);
-		LCD_move_cursor(1,8,'a','b',0,'b',1);
-		LCD_send_Snum(30,'a','b',0,'b',1);
-		_delay_ms(5000);
-		Servo_motor_angle(-30);
-		LCD_move_cursor(1,8,'a','b',0,'b',1);
-		LCD_send_string("-",'a','b',0,'b',1);
-		LCD_send_Snum(30,'a','b',0,'b',1);
-		_delay_ms(5000);
-		//LCD_send_cmd(cmd_clr_lcd,'a','b',0,'b',1);
-		//LCD_send_string("angle : ",'a','b',0,'b',1);
-		Servo_motor_angle(50);
-		LCD_move_cursor(1,8,'a','b',0,'b',1);
-		LCD_send_Snum(50 ,'a','b',0,'b',1);
-		_delay_ms(5000);
-		
-		
-		
+		x=USART_read_data();
+		LCD_send_char(x,'a','b',0,'b',1);
+	
 	}
+	*/
 	
 }
 

@@ -6,6 +6,7 @@
  */ 
 
 #include "USART.h"
+#include "avr/io.h"
 #include "../DIO/std_macros.h"
 #include "util/delay.h"
 
@@ -14,8 +15,8 @@ void USART_intialize (unsigned long baud_rate)
 	// set baud rate
 	unsigned short UBRR;
 	UBRR=(F_CPU/(16*baud_rate))-1;
-	UBRRH=(UBRR>>8);
-	UBRRL=UBRR;
+	UBRRH=(unsigned char)(UBRR>>8);
+	UBRRL=(unsigned char) UBRR;
 	
 	// enable tx , rx in UCSRB
 	set_bit(UCSRB,TXEN);
@@ -52,7 +53,7 @@ unsigned char USART_read_data(void)
 	return UDR;
 }
 
-void USART_send_string(unsigned char *ptr)
+void USART_send_string(const char *ptr)
 {
 	while(*ptr !=0)
 	{

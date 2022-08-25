@@ -43,6 +43,7 @@ SUBDIRS :=  \
 ../KeyPad \
 ../ADC \
 ../Motors \
+../USART \
 ../Ultra_Sonic \
 ../TIMERS
 
@@ -61,7 +62,8 @@ C_SRCS +=  \
 ../BUTTON/BUTTON.c \
 ../Motors/Motors.c \
 ../TIMERS/TIMERS.c \
-../Ultra_Sonic/Ultra_Sonic.c
+../Ultra_Sonic/Ultra_Sonic.c \
+../USART/USART.c
 
 
 PREPROCESSING_SRCS += 
@@ -83,7 +85,8 @@ main.o \
 BUTTON/BUTTON.o \
 Motors/Motors.o \
 TIMERS/TIMERS.o \
-Ultra_Sonic/Ultra_Sonic.o
+Ultra_Sonic/Ultra_Sonic.o \
+USART/USART.o
 
 OBJS_AS_ARGS +=  \
 7_SEG/7_SEG.o \
@@ -98,7 +101,8 @@ main.o \
 BUTTON/BUTTON.o \
 Motors/Motors.o \
 TIMERS/TIMERS.o \
-Ultra_Sonic/Ultra_Sonic.o
+Ultra_Sonic/Ultra_Sonic.o \
+USART/USART.o
 
 C_DEPS +=  \
 7_SEG/7_SEG.d \
@@ -113,7 +117,8 @@ main.d \
 BUTTON/BUTTON.d \
 Motors/Motors.d \
 TIMERS/TIMERS.d \
-Ultra_Sonic/Ultra_Sonic.d
+Ultra_Sonic/Ultra_Sonic.d \
+USART/USART.d
 
 C_DEPS_AS_ARGS +=  \
 7_SEG/7_SEG.d \
@@ -128,7 +133,8 @@ main.d \
 BUTTON/BUTTON.d \
 Motors/Motors.d \
 TIMERS/TIMERS.d \
-Ultra_Sonic/Ultra_Sonic.d
+Ultra_Sonic/Ultra_Sonic.d \
+USART/USART.d
 
 OUTPUT_FILE_PATH +=ATMEGA16.elf
 
@@ -229,6 +235,13 @@ TIMERS/TIMERS.o: ../TIMERS/TIMERS.c
 	
 
 Ultra_Sonic/Ultra_Sonic.o: ../Ultra_Sonic/Ultra_Sonic.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega16  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega16__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+USART/USART.o: ../USART/USART.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega16  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega16__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
