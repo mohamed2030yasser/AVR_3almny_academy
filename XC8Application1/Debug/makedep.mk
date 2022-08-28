@@ -24,6 +24,8 @@ BUTTON\BUTTON.c
 
 Motors\Motors.c
 
+SPI\SPI.c
+
 TIMERS\TIMERS.c
 
 Ultra_Sonic\Ultra_Sonic.c

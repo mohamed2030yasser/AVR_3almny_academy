@@ -182,6 +182,12 @@
     <Compile Include="Motors\Motors.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SPI\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="TIMERS\TIMERS.c">
       <SubType>compile</SubType>
     </Compile>
@@ -212,6 +218,7 @@
     <Folder Include="KeyPad" />
     <Folder Include="ADC" />
     <Folder Include="Motors" />
+    <Folder Include="SPI" />
     <Folder Include="USART" />
     <Folder Include="Ultra_Sonic" />
     <Folder Include="TIMERS" />

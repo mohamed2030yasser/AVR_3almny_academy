@@ -18,7 +18,7 @@ main.d main.o: .././main.c \
  .././DIO/std_macros.h .././LCD/LCD.h .././KeyPad/KeyPad.h .././ADC/ADC.h \
  .././EEPROM/EEPROM.h .././7_SEG/7_SEG.h .././TIMERS/TIMERS.h \
  .././Ultra_Sonic/Ultra_Sonic.h .././Motors/Motors.h \
- .././Motors/../TIMERS/TIMERS.h .././USART/USART.h
+ .././Motors/../TIMERS/TIMERS.h .././USART/USART.h .././SPI/SPI.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -79,3 +79,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 .././Motors/../TIMERS/TIMERS.h:
 
 .././USART/USART.h:
+
+.././SPI/SPI.h:
