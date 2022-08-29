@@ -51,7 +51,7 @@ unsigned char SPI_master_send_data(unsigned char data)
 	
 	
 	// wait until transmission finished
-	while(read_bit(SPSR,SPIF)==0);
+	while(read_bit(SPSR,SPIF)==0); //hint (disable this line if you use (ISR) in (TX) depend on (SPIF) >> isr will make spif =0 >> infinite loop
 	
 	// read spdr
 	return SPDR;
@@ -67,7 +67,7 @@ unsigned char SPI_slave_receive_data(unsigned char data)
 	return SPDR;
 }
 
-void SPI_master_send_Strind(const char *ptr)
+void SPI_master_send_String(const char *ptr)
 {
 	
 	while((*ptr) !=0)

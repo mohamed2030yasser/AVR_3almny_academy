@@ -25,6 +25,7 @@
 #include "Motors/Motors.h"
 #include "USART/USART.h"
 #include "SPI/SPI.h"
+#define dummy_data 0xff
 
 
 
@@ -33,32 +34,42 @@
 int main(void)
 {
 	//------------TX-----------
-	unsigned char x=0;
 	SPI_initialize_as_MASTER();
-	//_delay_ms(300);
-	while(x<10)
+	KeyPad_intialize('a');
+	LED_initialize('d',0);
+	sei();
+	unsigned char x=0;
+	
+	while(1)
 	{
-		SPI_master_send_data(x);
-		_delay_ms(300);
-		x++;
+		if (KeyPad_read('a')!=0xff)
+		{
+			x=KeyPad_read('a');
+			while(KeyPad_read('a')!=0xff);
+			SPI_master_send_data(x);
+		}
 	}
 	
 	
 	/*	//---------------RX--------
-	unsigned char x=0;
-	unsigned char z=0;
+	unsigned char x;
 	LCD_inatialize('a','b',0,'b',1);
 	SPI_initialize_as_SLAVE();
 	
 	
-	while(z<10)
+	
+	while(1)
 	{
-		x=SPI_slave_receive_data(x);
-		LCD_send_char(x+48,'a','b',0,'b',1);
-		z++;
+		x=SPI_slave_receive_data(dummy_data);
+		LCD_send_char(x,'a','b',0,'b',1);
 	
 	}*/
 	
 	
 }
 
+ISR(SPI_STC_vect)
+{
+	_delay_ms(100);
+	LED_tog('d',0);
+}
