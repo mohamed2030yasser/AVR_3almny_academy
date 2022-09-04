@@ -44,6 +44,15 @@ void I2C_start(void)
 	
 }
 
+
+void I2C__repeated_start(void)
+{
+	TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTA);
+	while(read_bit(TWCR,TWINT)==0); //wait to finish
+	while((TWSR & 0xf8) != 0x10); //repeated start condition transmitted
+	
+}
+
 void I2C_write_adress(unsigned char adress_plus_read_or_write)
 {
 	TWDR=adress_plus_read_or_write;
@@ -51,6 +60,16 @@ void I2C_write_adress(unsigned char adress_plus_read_or_write)
 	while(read_bit(TWCR,TWINT)==0);
 	while((TWSR & 0xf8) != 0x18); //SLA+RW transmitted and ACH receaved
 }
+
+
+void I2C_write_adress_and_read(unsigned char adress_plus_read_or_write)
+{
+	TWDR=adress_plus_read_or_write;
+	TWCR=(1<<TWINT)|(1<<TWEN);
+	while(read_bit(TWCR,TWINT)==0);
+	while((TWSR & 0xf8) != 0x40); //SLA+RW transmitted and ACH receaved
+}
+
 
 void I2C_write_data(unsigned char data)
 {
@@ -81,6 +100,16 @@ unsigned char I2C_slave_read(void)
 	TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWEA);
 	while(read_bit(TWCR,TWINT)==0);
 	while((TWSR & 0xf8) != 0x80); //own data received and ACH transmitted
+	return TWDR;
+	
+}
+
+unsigned char I2C_slave_read_with_non_ACH(void)
+{
+	TWCR=(1<<TWINT)|(1<<TWEN);
+	while(read_bit(TWCR,TWINT)==0);
+	while((TWSR & 0xf8) != 0x58); //own SLA+RW received and ACH transmitted
+	
 	return TWDR;
 	
 }
