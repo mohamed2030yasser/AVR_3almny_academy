@@ -43,6 +43,7 @@ SUBDIRS :=  \
 ../KeyPad \
 ../ADC \
 ../Motors \
+../I2C \
 ../SPI \
 ../USART \
 ../Ultra_Sonic \
@@ -55,6 +56,7 @@ C_SRCS +=  \
 ../ADC/ADC.c \
 ../DIO/DIO.c \
 ../EEPROM/EEPROM.c \
+../I2C/I2C.c \
 ../INT/INT.c \
 ../KeyPad/KeyPad.c \
 ../LCD/LCD.c \
@@ -79,6 +81,7 @@ OBJS +=  \
 ADC/ADC.o \
 DIO/DIO.o \
 EEPROM/EEPROM.o \
+I2C/I2C.o \
 INT/INT.o \
 KeyPad/KeyPad.o \
 LCD/LCD.o \
@@ -96,6 +99,7 @@ OBJS_AS_ARGS +=  \
 ADC/ADC.o \
 DIO/DIO.o \
 EEPROM/EEPROM.o \
+I2C/I2C.o \
 INT/INT.o \
 KeyPad/KeyPad.o \
 LCD/LCD.o \
@@ -113,6 +117,7 @@ C_DEPS +=  \
 ADC/ADC.d \
 DIO/DIO.d \
 EEPROM/EEPROM.d \
+I2C/I2C.d \
 INT/INT.d \
 KeyPad/KeyPad.d \
 LCD/LCD.d \
@@ -130,6 +135,7 @@ C_DEPS_AS_ARGS +=  \
 ADC/ADC.d \
 DIO/DIO.d \
 EEPROM/EEPROM.d \
+I2C/I2C.d \
 INT/INT.d \
 KeyPad/KeyPad.d \
 LCD/LCD.d \
@@ -178,6 +184,13 @@ DIO/DIO.o: ../DIO/DIO.c
 	
 
 EEPROM/EEPROM.o: ../EEPROM/EEPROM.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega16  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega16__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+I2C/I2C.o: ../I2C/I2C.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega16  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega16__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

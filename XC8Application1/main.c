@@ -25,6 +25,7 @@
 #include "Motors/Motors.h"
 #include "USART/USART.h"
 #include "SPI/SPI.h"
+#include "I2C/I2C.h"
 #define dummy_data 0xff
 
 
@@ -33,11 +34,10 @@
 
 int main(void)
 {
-	//------------TX-----------
-	SPI_initialize_as_MASTER();
+	/*//------------TX-----------
+	I2C_master_initialize(50000);
 	KeyPad_intialize('a');
 	LED_initialize('d',0);
-	sei();
 	unsigned char x=0;
 	
 	while(1)
@@ -46,30 +46,28 @@ int main(void)
 		{
 			x=KeyPad_read('a');
 			while(KeyPad_read('a')!=0xff);
-			SPI_master_send_data(x);
+			I2C_start();
+			I2C_write_adress(0b11111110);
+			I2C_write_data(x);
+			I2C_stop();
+			
 		}
-	}
+	}*/
 	
 	
-	/*	//---------------RX--------
+		//---------------RX--------
 	unsigned char x;
 	LCD_inatialize('a','b',0,'b',1);
-	SPI_initialize_as_SLAVE();
-	
+	I2C_set_adress(0b11111110);
 	
 	
 	while(1)
 	{
-		x=SPI_slave_receive_data(dummy_data);
+		x=I2C_slave_read();
 		LCD_send_char(x,'a','b',0,'b',1);
 	
-	}*/
+	}
 	
 	
 }
 
-ISR(SPI_STC_vect)
-{
-	_delay_ms(100);
-	LED_tog('d',0);
-}

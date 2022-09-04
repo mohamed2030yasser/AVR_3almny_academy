@@ -10,6 +10,8 @@ DIO\DIO.c
 
 EEPROM\EEPROM.c
 
+I2C\I2C.c
+
 INT\INT.c
 
 KeyPad\KeyPad.c

@@ -146,6 +146,12 @@
     <Compile Include="EEPROM\EEPROM.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="I2C\I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="I2C\I2C.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="INT\INT.c">
       <SubType>compile</SubType>
     </Compile>
@@ -218,6 +224,7 @@
     <Folder Include="KeyPad" />
     <Folder Include="ADC" />
     <Folder Include="Motors" />
+    <Folder Include="I2C" />
     <Folder Include="SPI" />
     <Folder Include="USART" />
     <Folder Include="Ultra_Sonic" />
