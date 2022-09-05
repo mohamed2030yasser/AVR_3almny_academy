@@ -19,7 +19,7 @@ main.d main.o: .././main.c \
  .././EEPROM/EEPROM.h .././7_SEG/7_SEG.h .././TIMERS/TIMERS.h \
  .././Ultra_Sonic/Ultra_Sonic.h .././Motors/Motors.h \
  .././Motors/../TIMERS/TIMERS.h .././USART/USART.h .././SPI/SPI.h \
- .././I2C/I2C.h
+ .././I2C/I2C.h .././DHT11/DHT11.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -84,3 +84,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 .././SPI/SPI.h:
 
 .././I2C/I2C.h:
+
+.././DHT11/DHT11.h:

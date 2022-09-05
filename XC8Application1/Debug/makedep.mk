@@ -6,6 +6,8 @@
 
 ADC\ADC.c
 
+DHT11\DHT11.c
+
 DIO\DIO.c
 
 EEPROM\EEPROM.c

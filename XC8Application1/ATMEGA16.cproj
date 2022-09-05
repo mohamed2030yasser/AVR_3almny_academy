@@ -131,6 +131,12 @@
     <Compile Include="ADC\ADC.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="DHT11\DHT11.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DHT11\DHT11.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="DIO\DIO.c">
       <SubType>compile</SubType>
     </Compile>
@@ -225,6 +231,7 @@
     <Folder Include="ADC" />
     <Folder Include="Motors" />
     <Folder Include="I2C" />
+    <Folder Include="DHT11" />
     <Folder Include="SPI" />
     <Folder Include="USART" />
     <Folder Include="Ultra_Sonic" />
